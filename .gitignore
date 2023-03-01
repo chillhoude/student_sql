@@ -1,0 +1,5 @@
+.venv
+create_student.ui
+student.ui
+__pycache__
+sql_test.py

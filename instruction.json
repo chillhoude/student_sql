@@ -1,0 +1,13 @@
+{
+   "create_student_tb": "CREATE TABLE IF NOT EXISTS student(id INTEGER PRIMARY KEY, name CHAR(15),surname CHAR(20),groupe_id INTEGER NOT NULL, FOREIGN KEY(groupe_id) REFERENCES groupes(id))",
+   "create_groupe_tb": "CREATE TABLE IF NOT EXISTS groupes(id INTEGER PRIMARY KEY, groupe CHAR(10) NOT NULL)",
+   "get_all_student": "SELECT name,surname,groupe FROM student JOIN groupes ON groupe_id=groupes.id",
+   "get_student_wth_id": "SELECT id,name,surname FROM student",
+   "get_groupes": "SELECT groupe,id FROM groupes",
+   "insert_student": "INSERT INTO student(name,surname,groupe_id) VALUES(?,?,?)",
+   "insert_groupe": "INSERT INTO groupes(groupe) VALUES(?)",
+   "sorted_by_grp": "SELECT name,surname,groupe FROM student JOIN groupes ON groupe_id=groupes.id WHERE groupes.id = ?",
+   "sorted_by_name": "SELECT name,surname,groupe FROM student JOIN groupes ON groupe_id=groupes.id WHERE name=? AND surname=?",
+   "get_student_by_grp_and_name": "SELECT name,surname,groupe FROM student JOIN groupes ON groupe_id=groupes.id WHERE name=? AND surname=? AND groupes.id =?",
+   "delete_student": "DELETE FROM student WHERE id=?"
+}
