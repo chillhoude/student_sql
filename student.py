@@ -107,7 +107,7 @@ class Ui_MainWindow(object):
 
     def delete_student(self):
         all_data_student = self.SQL.get_query(self.data["get_student_wth_id"])
-        for i in range(len(self.all_student)):
+        for i in range(self.tableWidget.rowCount()):
             checkbox = self.tableWidget.item(i,3)
             if checkbox.checkState():
                 student_id=0
